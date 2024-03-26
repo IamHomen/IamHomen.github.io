@@ -36,82 +36,18 @@
 
 <h1> Table of Contents </h1>
 
-<!--- [Installation](#installation)
-  - [Local](#local)
-  - [Docker](#docker)
-  - [Heroku](#heroku)
-  - [Render](#render)
-  - [Railway](#railway)-->
 - [Routes](#routes)
   <!--- [Get Recent Episodes](#get-recent-episodes)-->
   - [Get Popular Anime](#get-popular-anime)
   - [Get Anime Search](#get-anime-search)
   - [Get Anime Movies](#get-anime-movies)
-  - [Get Top Airing](#get-top-airing)
+  - [Get Anime Trending](#get-top-airing)
   <!--- [Get Anime Genres](#get-anime-genres)
     - [Genres](#genres)-->
   - [Get Anime Details](#get-anime-details)
   - [Get Streaming URLs](#get-streaming-urls)
     - [VIDCDN](#vidcdn)
-    <!-- [StreamSB](#streamsb)
-    - [~~Fembed~~ (DEPRECATED)](#fembed-deprecated)-->
-  <!-- [~~Get Download URLs~~ (DEPRECATED)](#get-download-urls-deprecated)
-    - [Download](#download)-->
-  - [Get Episode Thread](#get-episode-thread)
-<!--- [Contributing](#contributing)
-- [Showcases](#showcases)
-- [NEW API (v2) 🎉](#new-api-v2-)
-  - [Currently supported sites](#currently-supported-sites)
-  - [How to get started?](#how-to-get-started)
-
-
-## Installation
-
-### Local
-Run the following command to clone the repository, and install the dependencies:
-
-```sh
-git clone https://github.com/riimuru/gogoanime.git
-cd gogoanime
-npm install #or yarn install
-```
-
-start the server with the following command:
-
-```sh
-npm start #or yarn start
-```
-Now the server is running on http://localhost:3000
-
-### Docker
-Docker image is available at [Docker Hub](https://hub.docker.com/r/riimuru/gogoanime).
-
-run the following command to pull and run the docker image.
-
-```sh
-docker pull riimuru/gogoanime
-docker run -p 3000:3000 riimuru/gogoanime
-```
-This will start the server on port 3000. You can access the server at http://localhost:3000/, And can change the port by changing the -p option to `-p <port>:3000`.
-
-You can add `-d` flag to run the server in detached mode.
-
-### Heroku
-Host your own instance of the api on heroku using the button below.
-
-[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/riimuru/gogoanime/tree/main)
-
-### Render
-Host your own instance of the api on render using the button below.
-
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/riimuru/gogoanime-api)
-
-### Railway
-Host your own instance of the api on railway using the button below.
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/Lg6DEp?referralCode=dv4TuD)-->
-
-## Routes
+    
 Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) but you can use any other http library out there.
 
 <!--### Get Recent Episodes
