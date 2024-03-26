@@ -84,12 +84,12 @@ Output >>
 
 | Parameter    | Description         |
 | ------------ | ------------------- |
-| `page` (int) | page limit: [1-350] |
+| `page` (int) | page limit: [5000/`perPage`] |
 | ------------ | ------------------- |
 | `perPage` (int) | page limit: [1-50] |
 
 ```js
-fetch("https://gogoanime.consumet.stream/popular")
+fetch("localhost:8080/popular?page=`page`&perPage=`perPage`")
   .then((response) => response.json())
   .then((animelist) => console.log(animelist));
 ```
@@ -97,17 +97,28 @@ fetch("https://gogoanime.consumet.stream/popular")
 Output >>
 
 ```json
-[
-    {
-        "animeId": "boruto-naruto-next-generations",
-        "animeTitle": "Boruto: Naruto Next Generations",
-        "animeImg": "https://gogocdn.net/cover/boruto-naruto-next-generations.png",
-        "releasedDate": "2017",
-        "animeUrl": "https://www1.gogoanime.cm//category/boruto-naruto-next-generations"
-    },
-    {...},
-    ...
-]
+{
+  "data": {
+    "Page": {
+      "media": [
+        {
+          "id": 16498,
+          "seasonYear": 2013,
+          "episodes": 25,
+          "format": "TV",
+          "coverImage": {
+            "extraLarge": "string image url"
+          },
+          "title": {
+            "english": "Attack on Titan",
+            "userPreferred": "Shingeki no Kyojin",
+            "romaji": "Shingeki no Kyojin"
+          }
+        },...
+      ]
+    }
+  }
+}
 ```
 
 ### Get Anime Search
