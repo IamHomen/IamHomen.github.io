@@ -3,15 +3,15 @@
     <img src="images/image1.png" alt="Logo" width="85" height="85">
   </a>
 
-  <h3 align="center">GogoAnime API</h3>
+  <h3 align="center">Anime API</h3>
 
   <p align="center">
-    <samp>A free anime streaming restful API serving anime from <a href="https://www1.gogoanime.cm/">Gogoanime</a></samp>
+    <samp>A free anime streaming restful API serving anime from <a href="https://anilist.co/">Anilist</a></samp>
     <br />
     <a href="#routes"><strong>Explore the api »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/riimuru/gogoanime/issues/new?assignees=riimuru&labels=bug&template=bug-report.yml">Bug report</a>
+    <!--<a href="https://github.com/riimuru/gogoanime/issues/new?assignees=riimuru&labels=bug&template=bug-report.yml">Bug report</a>
     ·
     <a href="https://github.com/riimuru/gogoanime/issues/new?assignees=riimuru&labels=enhancement&template=feature-request.md">Feature request</a>
   </p>
@@ -32,7 +32,7 @@
       <img src="https://img.shields.io/github/license/consumet/extensions" alt="GitHub">
     </a>
   </p>
-</p>
+</p>-->
 
 <h1> Table of Contents </h1>
 
