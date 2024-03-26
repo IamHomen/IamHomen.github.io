@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/riimuru/gogoanime">
-    <img src="images/image1.png" alt="Logo" width="85" height="85">
+  <a href="https://github.com/mrcainv1-3128/homen-api-php/">
+    <img src="8fea8e.jpg" alt="Logo" width="85" height="85">
   </a>
 
   <h3 align="center">Anime API</h3>
