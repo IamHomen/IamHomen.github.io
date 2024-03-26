@@ -36,29 +36,29 @@
 
 <h1> Table of Contents </h1>
 
-- [Installation](#installation)
+<!--- [Installation](#installation)
   - [Local](#local)
   - [Docker](#docker)
   - [Heroku](#heroku)
   - [Render](#render)
-  - [Railway](#railway)
+  - [Railway](#railway)-->
 - [Routes](#routes)
-  - [Get Recent Episodes](#get-recent-episodes)
+  <!--- [Get Recent Episodes](#get-recent-episodes)-->
   - [Get Popular Anime](#get-popular-anime)
   - [Get Anime Search](#get-anime-search)
   - [Get Anime Movies](#get-anime-movies)
   - [Get Top Airing](#get-top-airing)
-  - [Get Anime Genres](#get-anime-genres)
-    - [Genres](#genres)
+  <!--- [Get Anime Genres](#get-anime-genres)
+    - [Genres](#genres)-->
   - [Get Anime Details](#get-anime-details)
   - [Get Streaming URLs](#get-streaming-urls)
     - [VIDCDN](#vidcdn)
-    - [StreamSB](#streamsb)
-    - [~~Fembed~~ (DEPRECATED)](#fembed-deprecated)
-  - [~~Get Download URLs~~ (DEPRECATED)](#get-download-urls-deprecated)
-    - [Download](#download)
+    <!-- [StreamSB](#streamsb)
+    - [~~Fembed~~ (DEPRECATED)](#fembed-deprecated)-->
+  <!-- [~~Get Download URLs~~ (DEPRECATED)](#get-download-urls-deprecated)
+    - [Download](#download)-->
   - [Get Episode Thread](#get-episode-thread)
-- [Contributing](#contributing)
+<!--- [Contributing](#contributing)
 - [Showcases](#showcases)
 - [NEW API (v2) 🎉](#new-api-v2-)
   - [Currently supported sites](#currently-supported-sites)
@@ -109,12 +109,12 @@ Host your own instance of the api on render using the button below.
 ### Railway
 Host your own instance of the api on railway using the button below.
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/Lg6DEp?referralCode=dv4TuD)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/Lg6DEp?referralCode=dv4TuD)-->
 
 ## Routes
 Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) but you can use any other http library out there.
 
-### Get Recent Episodes
+<!--### Get Recent Episodes
 
 | Parameter    | Description                                                                                                                                                                                   |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -143,12 +143,14 @@ Output >>
     ...
 ]
 ```
-
+-->
 ### Get Popular Anime
 
 | Parameter    | Description         |
 | ------------ | ------------------- |
-| `page` (int) | page limit: [1-504] |
+| `page` (int) | page limit: [1-350] |
+| ------------ | ------------------- |
+| `perPage` (int) | page limit: [1-50] |
 
 ```js
 fetch("https://gogoanime.consumet.stream/popular")
