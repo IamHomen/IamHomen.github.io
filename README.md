@@ -41,7 +41,7 @@
   - [Get Popular Anime](#get-popular-anime)
   - [Get Anime Search](#get-anime-search)
   - [Get Anime Movies](#get-anime-movies)
-  - [Get Anime Trending](#get-top-airing)
+  - [Get Anime Trending](#get-anime-trending)
   <!--- [Get Anime Genres](#get-anime-genres)
     - [Genres](#genres)-->
   - [Get Anime Details](#get-anime-details)
@@ -82,14 +82,13 @@ Output >>
 -->
 ### Get Popular Anime
 
-| Parameter    | Description         |
-| ------------ | ------------------- |
-| `page` (int) | page limit: [5000/`perPage`] |
-| ------------ | ------------------- |
-| `perPage` (int) | page limit: [1-50] |
+| Parameter       | Description         |
+| --------------- | ------------------- |
+| `page` (int) | Page limit (5000/perPage)         |
+| `perPage` (int)    | limit (1-50) |
 
 ```js
-fetch("localhost:8080/popular?page=`page`&perPage=`perPage`")
+fetch("localhost:8080/popular?page=1&perPage=20")
   .then((response) => response.json())
   .then((animelist) => console.log(animelist));
 ```
@@ -125,11 +124,12 @@ Output >>
 
 | Parameter       | Description         |
 | --------------- | ------------------- |
-| `keyw` (string) | anime title         |
-| `page` (int)    | page limit may vary |
+| `page` (int) | page limit may vary  |
+| `perPage` (int)    | page limit may vary |
+| `keyw` (string) | anime name you want to search |
 
 ```js
-fetch("https://gogoanime.consumet.stream/search?keyw=naruto")
+fetch("localhost:8080/search?keyw=Dragon Ball&page=1&perPage=20")
   .then((response) => response.json())
   .then((animelist) => console.log(animelist));
 ```
@@ -137,28 +137,40 @@ fetch("https://gogoanime.consumet.stream/search?keyw=naruto")
 Output >>
 
 ```json
-[
-    {
-        "animeId": "naruto",
-        "animeTitle": "Naruto",
-        "animeUrl": "https://www1.gogoanime.cm//category/naruto",
-        "animeImg": "https://gogocdn.net/images/anime/N/naruto.jpg",
-        "status": "Released: 2002"
-    },
-    {...},
-    ...
-]
+{
+  "da{
+  "data": {
+    "Page": {
+      "media": [
+        {
+          "id": 813,
+          "seasonYear": 1989,
+          "episodes": 291,
+          "format": "TV",
+          "coverImage": {
+            "extraLarge": "string image url"
+          },
+          "title": {
+            "english": "Dragon Ball Z",
+            "userPreferred": "Dragon Ball Z",
+            "romaji": "Dragon Ball Z"
+          }
+        },...
+      ]
+    }
+  }
+}
 ```
 
 ### Get Anime Movies
 
 | Parameter      | Description                                                                                                                    |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `aph` (string) | (optional) by default the movie list is random. **values are from [A-Z]. And 0 is Ascending order with page limit of [1-89].** |
-| `page` (int)   | page limit may vary                                                                                                            |
+| `page` (int) | page limit (5000/`perPage`) |
+| `perPage` (int)   | limit (1-50)                                                                                                            |
 
 ```js
-fetch("https://gogoanime.consumet.stream/anime-movies")
+fetch("localhost:8080/movies?page=1&perPage=20")
   .then((response) => response.json())
   .then((animelist) => console.log(animelist));
 ```
@@ -166,20 +178,32 @@ fetch("https://gogoanime.consumet.stream/anime-movies")
 Output >>
 
 ```json
-[
-	{
-		"animeId": "tenchi-muyou-manatsu-no-eve",
-		"animeTitle": "Tenchi Muyou! Manatsu no Eve",
-		"animeImg": "https://gogocdn.net/cover/tenchi-muyou-manatsu-no-eve.png",
-		"releasedDate": "1997",
-		"animeUrl": "https://www1.gogoanime.cm//category/tenchi-muyou-manatsu-no-eve"
-	},
-    {...},
-    ...
-]
+{
+  "data": {
+    "Page": {
+      "media": [
+        {
+          "id": 21519,
+          "seasonYear": 2016,
+          "episodes": 1,
+          "format": "MOVIE",
+          "coverImage": {
+            "extraLarge": "string image url"
+          },
+          "title": {
+            "english": "Your Name.",
+            "userPreferred": "Kimi no Na wa.",
+            "romaji": "Kimi no Na wa."
+          }
+        },
+...
+      ]
+    }
+  }
+}
 ```
 
-### Get Top Airing
+### Get Anime Trending
 
 | Parameter    | Description                                                                                                 |
 | ------------ | ----------------------------------------------------------------------------------------------------------- |
