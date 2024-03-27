@@ -207,10 +207,11 @@ Output >>
 
 | Parameter    | Description                                                                                                 |
 | ------------ | ----------------------------------------------------------------------------------------------------------- |
-| `page` (int) | page limit [1-26]. ***-1** to fetch all the pages avaliable **Warning: Waiting time will be much longer.*** |
+| `page` (int) | page limit (5000/`perPage`). |
+| `perPage` (int) | limit (1-50). |
 
 ```js
-fetch("https://gogoanime.consumet.stream/top-airing")
+fetch("localhost:8080/trending?page=1&perPage=20")
   .then((response) => response.json())
   .then((animelist) => console.log(animelist));
 ```
@@ -218,18 +219,28 @@ fetch("https://gogoanime.consumet.stream/top-airing")
 Output >>
 
 ```json
-[
-	{
-		"animeId": "sekai-saikou-no-ansatsusha-isekai-kizoku-ni-tensei-suru",
-		"animeTitle": "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru",
-		"animeImg": "https://cdnimg.xyz/cover/sekai-saikou-no-ansatsusha-isekai-kizoku-ni-tensei-suru.png",
-		"latestEp": "Episode 9",
-		"animeUrl": "https://www1.gogoanime.cm//category/sekai-saikou-no-ansatsusha-isekai-kizoku-ni-tensei-suru",
-		"genres": ["Action", "Drama", "Fantasy", "Mystery", "Romance"]
-	}
-    {...},
-    ...
-]
+{
+  "data": {
+    "Page": {
+      "media": [
+        {
+          "id": 163076,
+          "seasonYear": 2024,
+          "episodes": 12,
+          "format": "TV",
+          "coverImage": {
+            "extraLarge": "string image url"
+          },
+          "title": {
+            "english": "Villainess Level 99: I May Be the Hidden Boss but I'm Not the Demon Lord",
+            "userPreferred": "Akuyaku Reijou Level 99: Watashi wa Ura Boss desu ga Maou de wa Arimasen",
+            "romaji": "Akuyaku Reijou Level 99: Watashi wa Ura Boss desu ga Maou de wa Arimasen"
+          }
+        },...
+      ]
+    }
+  }
+}
 ```
 
 ### Get Anime Genres
@@ -238,6 +249,7 @@ Output >>
 | ----------------- | ------------------------------------- |
 | `:genre` (string) | [Genres are avaliable below](#genres) |
 | `page` (int)      | The page limit varies by genre.       |
+| `perPage` (int)      | The page limit varies by genre.       |
 
 #### Genres
 <details>
@@ -247,57 +259,28 @@ Output >>
 | --------------- |
 | `action`        |
 | `adventure`     |
-| `cars `         |
 | `comedy`        |
-| `crime`         |
-| `dementia`      |
-| `demons`        |
 | `drama`         |
-| `dub`           |
 | `ecchi`         |
-| `family`        |
 | `fantasy`       |
-| `game`          |
-| `gourmet`       |
-| `harem`         |
-| `historical`    |
 | `horror`        |
-| `josei`         |
-| `kids`          |
-| `magic`         |
-| `martial-arts`  |
+| `mahou shoujo`  |
 | `mecha`         |
-| `military`      |
-| `Mmusic`        |
+| `music`         |
 | `mystery`       |
-| `parody`        |
-| `police`        |
 | `psychological` |
 | `romance`       |
-| `samurai`       |
-| `school`        |
 | `sci-fi`        |
-| `seinen`        |
-| `shoujo`        |
-| `shoujo-ai`     |
-| `shounen`       |
-| `shounen-ai`    |
-| `slice-of-Life` |
-| `space`         |
+| `slice of life` |
 | `sports`        |
-| `super-power`   |
 | `supernatural`  |
-| `suspense`      |
 | `thriller`      |
-| `vampire`       |
-| `yaoi`          |
-| `yuri`          |
 
 </details>
 &nbsp;
 
 ```js
-fetch("https://gogoanime.consumet.stream/genre/action")
+fetch("localhost:8080/genres?genre=action&page=1&perPage=20")
   .then((response) => response.json())
   .then((animelist) => console.log(animelist));
 ```
@@ -305,16 +288,35 @@ fetch("https://gogoanime.consumet.stream/genre/action")
 Output >>
 
 ```json
-[
-    {
-        "animeId": "isekai-meikyuu-de-harem-wo",
-        "animeTitle": "Isekai Meikyuu de Harem wo",
-        "animeImg": "https://gogocdn.net/cover/isekai-meikyuu-de-harem-wo.png",
-        "releasedDate": "2022",
-        "animeUrl": "https://www1.gogoanime.cm//category/isekai-meikyuu-de-harem-wo"
-    },
-    {...},
-    ...
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "total": 5000,
+        "perPage": 1,
+        "currentPage": 1,
+        "lastPage": 5000,
+        "hasNextPage": true
+      },
+      "media": [
+        {
+          "id": 5,
+          "seasonYear": 2001,
+          "episodes": 1,
+          "format": "MOVIE",
+          "coverImage": {
+            "extraLarge": "string image url"
+          },
+          "title": {
+            "english": "Cowboy Bebop: The Movie - Knockin' on Heaven's Door",
+            "userPreferred": "Cowboy Bebop: Tengoku no Tobira",
+            "romaji": "Cowboy Bebop: Tengoku no Tobira"
+          }
+        }, ...
+      ]
+    }
+  }
+}
 ```
 
 ### Get Anime Details
