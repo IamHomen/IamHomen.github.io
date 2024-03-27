@@ -291,13 +291,6 @@ Output >>
 {
   "data": {
     "Page": {
-      "pageInfo": {
-        "total": 5000,
-        "perPage": 1,
-        "currentPage": 1,
-        "lastPage": 5000,
-        "hasNextPage": true
-      },
       "media": [
         {
           "id": 5,
@@ -323,10 +316,10 @@ Output >>
 
 | Parameter      | Description                                                                          |
 | -------------- | ------------------------------------------------------------------------------------ |
-| `:id` (string) | **animeId can be found in every response body as can be seen in the above examples** |
+| `id` (int) | **id can be found in every response body as can be seen in the above examples** |
 
 ```js
-fetch("https://gogoanime.consumet.stream/anime-details/naruto")
+fetch("localhost:8080/info?id=163076")
   .then((response) => response.json())
   .then((animelist) => console.log(animelist));
 ```
